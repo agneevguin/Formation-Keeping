@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class RenderMap : MonoBehaviour {
@@ -26,8 +26,8 @@ public class RenderMap : MonoBehaviour {
     void Start () {
 
         GameObject camObj = GameObject.Find("Main Camera");
-        camObj.transform.position = new Vector3(width / 2, height / 2, -15);
-
+        camObj.transform.position = new Vector3((float)(width / 2), (float)(height / 2), -2);
+        carAgents.createCarAgents();
     }
 	
 
@@ -39,11 +39,11 @@ public class RenderMap : MonoBehaviour {
         {
             if(endPoints[i] == 3)
             {
-                Debug.DrawLine(new Vector2(polygonX[polygonStart], polygonY[polygonStart]), new Vector2(polygonX[i], polygonY[i]),  Color.magenta);
+                Debug.DrawLine(new Vector2(polygonX[polygonStart], polygonY[polygonStart]), new Vector2(polygonX[i], polygonY[i]),  Color.green);
                 polygonStart = i+1;
             }
             else
-                Debug.DrawLine(new Vector2(polygonX[i], polygonY[i]), new Vector2(polygonX[i+1], polygonY[i+1]), Color.magenta);
+                Debug.DrawLine(new Vector2(polygonX[i], polygonY[i]), new Vector2(polygonX[i+1], polygonY[i+1]), Color.green);
         }
     }
     
